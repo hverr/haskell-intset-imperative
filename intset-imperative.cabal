@@ -40,6 +40,7 @@ test-suite intset-imperative-test-random
                       , mtl
                       , primitive
                       , random
+                      , transformers
                       , unordered-containers
   default-language:     Haskell2010
   ghc-options:          -Wall -threaded -rtsopts -with-rtsopts=-N
@@ -50,6 +51,5 @@ test-suite intset-imperative-test-fixed
   hs-source-dirs:       test-fixed
   build-depends:        base >=4.7 && <5
                       , intset-imperative
-                      , transformers
   default-language:     Haskell2010
   ghc-options:          -Wall -threaded -rtsopts -with-rtsopts=-N
