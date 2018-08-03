@@ -1,0 +1,37 @@
+name:           intset-imperative
+version:        0.1.0.0
+description:    An imperative integer set written in Haskell.
+homepage:       https://github.com/hverr/haskell-intset-imperative#readme
+bug-reports:    https://github.com/hverr/haskell-intset-imperative/issues
+author:         Henri Verroken
+maintainer:     henriverroken@gmail.com
+copyright:      2018 Henri Verroken
+license:        BSD3
+license-file:   LICENSE
+category:       Data Structures
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/hverr/intset-imperative
+
+library
+  exposed-modules:      Data.IntSet.Bounded.Imperative
+  hs-source-dirs:       src
+  build-depends:        base >=4.7 && <5
+                      , deepseq
+                      , primitive
+  default-language:     Haskell2010
+  ghc-options:          -Wall
+
+test-suite intset-imperative-test
+  type:                 exitcode-stdio-1.0
+  main-is:              Spec.hs
+  hs-source-dirs:       test
+  build-depends:        base >=4.7 && <5
+                      , intset-imperative
+  default-language:     Haskell2010
+  ghc-options:          -Wall -threaded -rtsopts -with-rtsopts=-N
