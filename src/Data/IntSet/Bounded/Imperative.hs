@@ -6,6 +6,7 @@
 module Data.IntSet.Bounded.Imperative (
   -- * Types
   IntSet
+, IOIntSet
 , intSetMinBound
 , intSetMaxBound
 
@@ -46,6 +47,9 @@ data IntSet s = IntSet {
   , intSetInBounds#  :: {-# UNPACK #-} !(MutableByteArray s)
   , intSetOutBounds# :: {-# UNPACK #-} !(MutVar s [Word64])
   }
+
+-- | An 'IntSet' inside the 'IO' monad.
+type IOIntSet = IntSet (PrimState IO)
 
 -- | Get the minimum efficient bound of the integer set.
 intSetMinBound :: IntSet s -> Word64

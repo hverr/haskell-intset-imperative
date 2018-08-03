@@ -39,3 +39,12 @@ test-suite intset-imperative-test-random
                       , unordered-containers
   default-language:     Haskell2010
   ghc-options:          -Wall -threaded -rtsopts -with-rtsopts=-N
+
+test-suite intset-imperative-test-fixed
+  type:                 exitcode-stdio-1.0
+  main-is:              Spec.hs
+  hs-source-dirs:       test-fixed
+  build-depends:        base >=4.7 && <5
+                      , intset-imperative
+  default-language:     Haskell2010
+  ghc-options:          -Wall -threaded -rtsopts -with-rtsopts=-N
