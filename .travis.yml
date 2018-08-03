@@ -175,14 +175,7 @@ script:
       ;;
     cabal)
       # disale coverage for now
-      if [ "$GHCVER" != "8.0.2" -o true ]; then
-        cabal install --enable-tests --enable-benchmarks --force-reinstalls --ghc-options=-O0 --reorder-goals --max-backjumps=-1 $CABALARGS $PACKAGES
-      else
-        cabal install --enable-tests --enable-coverage --enable-benchmarks --force-reinstalls --ghc-options=-O0 --reorder-goals --max-backjumps=-1 $CABALARGS $PACKAGES
-        cabal test
-        cabal install hpc-coveralls
-        hpc-coveralls -r "$COVERALLS_TOKEN" haskey-integration haskey-properties
-      fi
+      cabal install --enable-tests --enable-benchmarks --force-reinstalls --ghc-options=-O0 --reorder-goals --max-backjumps=-1 $CABALARGS $PACKAGES
 
       ORIGDIR=$(pwd)
       for dir in $PACKAGES
