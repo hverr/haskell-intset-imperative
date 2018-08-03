@@ -1,6 +1,9 @@
 name:           intset-imperative
 version:        0.1.0.0
-description:    An imperative integer set written in Haskell.
+description:
+    An imperative integer set written in Haskell.
+    .
+    Read <https://deliquus.com/posts/2018-07-30-imperative-programming-in-haskell.html> for more information.
 synopsis:       An imperative integer set written in Haskell.
 homepage:       https://github.com/hverr/haskell-intset-imperative#readme
 bug-reports:    https://github.com/hverr/haskell-intset-imperative/issues
