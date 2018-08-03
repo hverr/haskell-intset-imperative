@@ -53,3 +53,17 @@ test-suite intset-imperative-test-fixed
                       , intset-imperative
   default-language:     Haskell2010
   ghc-options:          -Wall -threaded -rtsopts -with-rtsopts=-N
+
+benchmark intset-imperative-bench
+  type:                 exitcode-stdio-1.0
+  hs-source-dirs:       bench
+  main-is:              Bench.hs
+  build-depends:        base
+                      , intset-imperative
+                      , containers
+                      , criterion
+                      , random
+                      , unordered-containers
+                      , vector
+  ghc-options:          -Wall -O2
+  default-language:     Haskell2010
